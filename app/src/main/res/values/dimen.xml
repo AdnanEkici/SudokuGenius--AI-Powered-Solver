@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimensions of splash image -->
+    <item name="splash_icon_width_fraction" type="fraction">50%</item>
+    <item name="splash_icon_height_fraction" type="fraction">50%</item>
+</resources>
