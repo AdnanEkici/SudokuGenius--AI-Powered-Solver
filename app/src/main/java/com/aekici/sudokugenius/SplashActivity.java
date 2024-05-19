@@ -1,41 +1,35 @@
 package com.aekici.sudokugenius;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-import android.util.DisplayMetrics;
+import com.aekici.sudokugenius.utilities.ViewUtils;
 
-public class SplashActivity extends AppCompatActivity {
+@SuppressLint("CustomSplashScreen")
+public class SplashActivity extends AppCompatActivity
+{
 
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        ImageView imageView = findViewById(R.id.GfG_full_logo);
+        ImageView splashScreenLogoImageView = findViewById(R.id.SplashScreenLogoImageViewId);
 
-        // Get the screen width
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int screenWidth = displayMetrics.widthPixels;
+        ViewUtils.setViewSizeBasedOnScreenPercentage(splashScreenLogoImageView, R.fraction.splash_icon_width_fraction, R.fraction.splash_icon_height_fraction, this);
 
-        // Get the desired width based on percentage defined in dimensions.xml
-        float widthPercentage = getResources().getFraction(R.fraction.splash_icon_width_fraction, 1, 1);
-        float heightPercentage = getResources().getFraction(R.fraction.splash_icon_height_fraction, 1, 1);
-        int desiredWidth = (int) (screenWidth * widthPercentage);
-        int desiredHeight = (int) (screenWidth * heightPercentage); // assuming you want the height to be based on the width
-
-        // Set the width and height of the ImageView
-        imageView.getLayoutParams().width = desiredWidth;
-        imageView.getLayoutParams().height = desiredHeight;
-
-
-
-        new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable()
+        {
             @Override
-            public void run() {
+            public void run()
+            {
 
                 //Create an intent that will start the main activity.
                 Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Dimensions of splash image -->
+    <!-- Fractions of default margins -->
+    <item name="default_margin_top_fraction" type="fraction">0%</item>
+    <item name="default_margin_bottom_fraction" type="fraction">0%</item>
+    <item name="default_margin_start_fraction" type="fraction">0%</item>
+    <item name="default_margin_end_fraction" type="fraction">0%</item>
+
+    <!-- Fractions of splash image -->
     <item name="splash_icon_width_fraction" type="fraction">50%</item>
     <item name="splash_icon_height_fraction" type="fraction">50%</item>
+
+    <!-- Fractions of login logo -->
+    <item name="login_logo_width_fraction" type="fraction">70%</item>
+    <item name="login_logo_height_fraction" type="fraction">70%</item>
+    <item name="margin_top_login_logo_fraction" type="fraction">10%</item>
 </resources>
